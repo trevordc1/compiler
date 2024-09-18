@@ -1,0 +1,10 @@
+link to github: https://github.com/trevordc1/compiler
+
+compile with: 
+
+lex scanner.l
+gcc lex.yy.c -ll -o scanner
+
+
+run with:
+./scanner example.txt
