@@ -1,0 +1,4 @@
+(define-fun square (x) (* x x))
+(if (> 2 1) (print "yes") (print "no"))
+
+//quotations for now error out

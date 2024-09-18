@@ -362,11 +362,11 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[44] =
     {   0,
-        0,    0,   15,   13,   12,    1,   10,   11,    7,    8,
-        6,   13,    6,    9,    9,    9,    9,    9,   12,    8,
-        6,    9,    9,    9,    4,    9,    9,    9,    9,    9,
-        0,    9,    9,    0,    5,    9,    0,    0,    3,    0,
-        0,    2,    0
+        0,    0,   15,   13,    1,    2,   11,   12,    8,    9,
+        7,    7,    7,   10,   10,   10,   10,   10,    1,    9,
+        7,   10,   10,   10,    5,   10,   10,   10,   10,   10,
+        0,   10,   10,    0,    6,   10,    0,    0,    4,    0,
+        0,    3,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -410,11 +410,11 @@ static const YY_CHAR yy_meta[23] =
 
 static const flex_int16_t yy_base[45] =
     {   0,
-        0,    0,   55,   56,   21,   23,   56,   56,   56,   46,
-       43,   42,   41,    0,   36,   35,   33,   27,   25,   38,
-       56,    0,   30,   23,    0,   26,   25,   34,   22,   21,
-       21,   16,   22,   17,    0,   27,   12,   17,   56,    9,
-       12,   56,   56,   27
+        0,    0,   50,   51,   47,   51,   51,   51,   51,   40,
+       37,   51,   36,    0,   31,   30,   28,   22,   39,   32,
+       51,    0,   24,   17,    0,   20,   19,   28,   16,   15,
+       15,   10,   16,   11,    0,   21,    6,   11,   51,    3,
+        6,   51,   51,   21
     } ;
 
 static const flex_int16_t yy_def[45] =
@@ -426,28 +426,28 @@ static const flex_int16_t yy_def[45] =
        43,   43,    0,   43
     } ;
 
-static const flex_int16_t yy_nxt[79] =
+static const flex_int16_t yy_nxt[74] =
     {   0,
         4,    5,    6,    7,    8,    9,    9,   10,   11,   12,
        13,   14,   15,   14,   14,   16,   17,   14,   18,   14,
-       14,   14,   19,   19,   19,   19,   19,   19,   22,   42,
-       41,   40,   39,   38,   37,   36,   35,   34,   33,   32,
-       31,   30,   29,   28,   27,   20,   26,   25,   24,   23,
-       21,   21,   21,   20,   43,    3,   43,   43,   43,   43,
+       14,   14,   22,   42,   41,   40,   39,   38,   37,   36,
+       35,   34,   33,   32,   31,   30,   29,   28,   27,   20,
+       19,   26,   25,   24,   23,   21,   21,   20,   19,   43,
+        3,   43,   43,   43,   43,   43,   43,   43,   43,   43,
        43,   43,   43,   43,   43,   43,   43,   43,   43,   43,
-       43,   43,   43,   43,   43,   43,   43,   43
+       43,   43,   43
     } ;
 
-static const flex_int16_t yy_chk[79] =
+static const flex_int16_t yy_chk[74] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    5,    5,    6,    6,   19,   19,   44,   41,
-       40,   38,   37,   36,   34,   33,   32,   31,   30,   29,
-       28,   27,   26,   24,   23,   20,   18,   17,   16,   15,
-       13,   12,   11,   10,    3,   43,   43,   43,   43,   43,
+        1,    1,   44,   41,   40,   38,   37,   36,   34,   33,
+       32,   31,   30,   29,   28,   27,   26,   24,   23,   20,
+       19,   18,   17,   16,   15,   13,   11,   10,    5,    3,
        43,   43,   43,   43,   43,   43,   43,   43,   43,   43,
-       43,   43,   43,   43,   43,   43,   43,   43
+       43,   43,   43,   43,   43,   43,   43,   43,   43,   43,
+       43,   43,   43
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -722,7 +722,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 56 );
+		while ( yy_base[yy_current_state] != 51 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -747,66 +747,65 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
 #line 8 "scanner.l"
-{ line_number++; }
+;
 	YY_BREAK
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 10 "scanner.l"
-{ printf("Line %d: function definition keyword: %s\n", line_number, yytext); }
+#line 9 "scanner.l"
+{ line_number++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 11 "scanner.l"
-{ printf("Line %d: predefined function: %s\n", line_number, yytext); }
+{ printf("Line %d: function definition keyword: %s\n", line_number, yytext); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 12 "scanner.l"
-{ printf("Line %d: conditional operator: %s\n", line_number, yytext); }
+{ printf("Line %d: predefined function: %s\n", line_number, yytext); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 13 "scanner.l"
-{ printf("Line %d: program entry: %s\n", line_number, yytext); }
+{ printf("Line %d: conditional operator: %s\n", line_number, yytext); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 14 "scanner.l"
-{ printf("Line %d: arithmetic comparison: %s\n", line_number, yytext); }
+{ printf("Line %d: program entry: %s\n", line_number, yytext); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "scanner.l"
-{ printf("Line %d: arithmetic operation: %s\n", line_number, yytext ); }
+#line 15 "scanner.l"
+{ printf("Line %d: arithmetic comparison: %s\n", line_number, yytext); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 18 "scanner.l"
-{ printf("Line %d: arithmetic/int constant: %s\n", line_number, yytext); }
+#line 17 "scanner.l"
+{ printf("Line %d: arithmetic operation: %s\n", line_number, yytext ); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 19 "scanner.l"
-{ printf("Line %d: variable/function: %s\n", line_number, yytext); }
+{ printf("Line %d: arithmetic/int constant: %s\n", line_number, yytext); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "scanner.l"
-{ printf("Line %d: left parenthesis: %s\n", line_number, yytext); }
+#line 20 "scanner.l"
+{ printf("Line %d: variable/function: %s\n", line_number, yytext); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 22 "scanner.l"
-{ printf("Line %d: right parenthesis: %s\n", line_number, yytext); }
+{ printf("Line %d: left parenthesis: %s\n", line_number, yytext); }
 	YY_BREAK
 case 12:
-/* rule 12 can match eol */
 YY_RULE_SETUP
-#line 24 "scanner.l"
-{ /* Skip whitespace, tabs, newlines */ }
+#line 23 "scanner.l"
+{ printf("Line %d: right parenthesis: %s\n", line_number, yytext); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
@@ -818,7 +817,7 @@ YY_RULE_SETUP
 #line 29 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 822 "lex.yy.c"
+#line 821 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

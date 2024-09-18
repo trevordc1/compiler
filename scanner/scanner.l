@@ -5,13 +5,14 @@ int line_number = 1;
 
 %%
 
+[ \t]+              ;
 \n              { line_number++; }
 
 "define-fun"    { printf("Line %d: function definition keyword: %s\n", line_number, yytext); }
 "get-int"       { printf("Line %d: predefined function: %s\n", line_number, yytext); }
 "if"            { printf("Line %d: conditional operator: %s\n", line_number, yytext); }
 "print"         { printf("Line %d: program entry: %s\n", line_number, yytext); }
-"<="|">="|"=="|">"|"<" { printf("Line %d: arithmetic comparison: %s\n", line_number, yytext); }
+"<="|">="|"="|">"|"<" { printf("Line %d: arithmetic comparison: %s\n", line_number, yytext); }
 
 [+\-*]              { printf("Line %d: arithmetic operation: %s\n", line_number, yytext ); }
 
@@ -21,7 +22,6 @@ int line_number = 1;
 "\("            { printf("Line %d: left parenthesis: %s\n", line_number, yytext); }
 "\)"            { printf("Line %d: right parenthesis: %s\n", line_number, yytext); }
 
-[ \t\n]+        { /* Skip whitespace, tabs, newlines */ }
 
 .               { printf("Error on line %d: Unrecognized token '%s'\n", line_number, yytext); exit(1); }
 
